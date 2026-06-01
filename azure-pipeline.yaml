@@ -20,6 +20,11 @@ steps:
     provider: 'azurerm'
     command: 'init'
     backendServiceArm: 'tfstatefile'
+
+    backendAzureRmResourceGroupName: 'POC'
+    backendAzureRmStorageAccountName: 'tfstatepoc2026'
+    backendAzureRmContainerName: 'tfstate'
+    backendAzureRmKey: 'dev/terraform.tfstate'
     workingDirectory: '$(workingDirectory)'
 
 - task: TerraformTaskV4@4
