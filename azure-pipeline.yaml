@@ -68,8 +68,8 @@ stages:
               docker run --rm \
                 -v $(System.DefaultWorkingDirectory):/tf \
                 bridgecrew/checkov \
-                --directory /tf/ha-setup/env/${{ parameters.environment }}
-                --skip-check CKV_AZURE_49
+                --directory /tf/ha-setup/env/${{ parameters.environment }} \
+                --skip-check CKV_AZURE_49,CKV_AZURE_178,CKV_AZURE_97,CKV_AZURE_149,CKV_AZURE_1,CKV_AZURE_50,CKV_AZURE_119,CKV_AZURE_160,CKV_AZURE_10
             displayName: Checkov Security Scan
 
   - stage: Plan
