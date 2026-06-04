@@ -49,12 +49,6 @@ module "nsg" {
   allowed_ssh_ip = var.allowed_ssh_ip
 }
 
-
-resource "azurerm_subnet_network_security_group_association" "private" {
-  subnet_id                 = module.network.private_subnet_id
-  network_security_group_id = module.nsg.nsg_id
-}
-
 module "loadbalancer" {
   source = "../../modules/loadbalancer"
 
